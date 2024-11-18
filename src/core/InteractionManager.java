@@ -238,7 +238,7 @@ class InteractionManager implements Serializable {
         System.out.println("You ran away from the " + enemy.getName());
         player.setPosition(new Point(player.getPreviousPosition().getX(),
                 player.getPreviousPosition().getY(), player.getPreviousPosition().getZ()));
-        System.out.println("You are back at your previous location: " + player.getPosition());
+        System.out.println("You are back at your previous location.");
     }
 
     void handleItemInteraction(Item item) {

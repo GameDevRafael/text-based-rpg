@@ -244,5 +244,11 @@ public class Character implements Serializable {
         System.out.println("The enemy dropped " + item.getName() + " on the ground.");
     }
 
+    public String characterStats() {
+
+        return "Health: " + this.getHealth() + " " + "Damage: " + this.getDamage() + " " +
+                "Defense: " + this.getDefense() + "\n";
+    }
+
 
 }

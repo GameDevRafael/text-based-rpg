@@ -98,7 +98,7 @@ public class Shop implements Serializable {
     }
 
     public void displayShop() {
-        System.out.println("Items available: ");
+        System.out.println("The shop has " + gold.getDescription() + ". Items available: ");
         for (Weapon weapon : inventory) {
             System.out.println(weapon.getName() + " - " + weapon.getPrice() + " gold");
         }

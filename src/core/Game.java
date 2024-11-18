@@ -76,7 +76,8 @@ class Game implements Serializable {
     }
 
     private boolean handleInput() {
-        System.out.println("What would you like to do? (explore / inventory / quit)");
+        System.out.println("What would you like to do? (explore / inventory / quit). Player stats: " +
+                player.characterStats());
 
         while (true) {
             String input = inputHandler.getUserInput();

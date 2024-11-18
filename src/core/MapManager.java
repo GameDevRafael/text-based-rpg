@@ -77,8 +77,7 @@ public class MapManager implements Serializable {
         List<Point> exitsStart = List.of(new Point(2, 1, 0), new Point(1, 0, 0));
         List<Point> exitsForest1 = List.of(new Point(1, 2, 0), new Point(2, 1, 0),
                 new Point(0, 1, 0));
-        List<Point> exitsForest2 = List.of(new Point(1,3,0), new Point(0,2,0),
-                new Point(0, 4, 0));
+        List<Point> exitsForest2 = List.of(new Point(1,3,0), new Point(0,2,0));
         List<Point> exitsForest3 = List.of(new Point(0, 3, 0), new Point(1, 2, 0),
                 new Point(2, 3, 0));
         List<Point> exitsForest4 = List.of(new Point(0, 4, 0), new Point(1, 3, 0),

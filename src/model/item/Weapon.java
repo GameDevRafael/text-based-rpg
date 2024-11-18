@@ -43,6 +43,11 @@ public abstract class Weapon extends Item implements Serializable {
         };
     }
 
+    @Override
+    public String getDescription() {
+        return super.getDescription() + " Durability: " + durability + ". " + "Price: " + getPrice() + " gold.";
+    }
+
     public int getPrice() {
         return price;
     }

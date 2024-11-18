@@ -94,8 +94,10 @@ class GameManager implements Serializable {
                 "bridge", 5));
         individuals.add(NPCFactory.createGoblin("Village Goblin", new Point(3, 2, 0),
                 "village", 7));
-        individuals.add(NPCFactory.createWitch("House Witch", new Point(0, 4, 0), "house"));
-        individuals.add(NPCFactory.createOgre("Swamp Ogre", new Point(0, 2, 0), "swamp"));
+        individuals.add(NPCFactory.createWitch("House Witch", new Point(0, 4, 0),
+                "house"));
+        individuals.add(NPCFactory.createOgre("Swamp Ogre", new Point(0, 2, 0),
+                "swamp"));
         individuals.add(NPCFactory.createMerchant("Village Merchant", new Point(3, 3, 0),
                 "village"));
 
@@ -107,19 +109,19 @@ class GameManager implements Serializable {
         List<Item> items = new ArrayList<>();
 
         items.add(ItemFactory.createWeapon("Shield", 1, "Wooden Shield",
-                "A wooden shield"));
+                "A wooden shield."));
         items.add(ItemFactory.createWeapon("Shield", 2, "Iron Shield",
-                "An iron shield"));
+                "An iron shield."));
         items.add(ItemFactory.createWeapon("Sword", 1, "Wooden Sword",
-                "A wooden sword"));
+                "A wooden sword."));
         items.add(ItemFactory.createWeapon("Sword", 2, "Iron Sword",
-                "An iron sword"));
+                "An iron sword."));
         items.add(ItemFactory.createPotion("HealthPotion", 1, "Health Potion",
-                "A health potion"));
+                "A health potion."));
         items.add(ItemFactory.createPotion("StrengthPotion", 1, "Strength Potion",
-                "A strength potion"));
+                "A strength potion."));
         items.add(ItemFactory.createPotion("DefensePotion", 1, "Defense Potion",
-                "A defense potion"));
+                "A defense potion."));
         items.add(ItemFactory.createGold(5));
         items.add(ItemFactory.createGold(7));
 
@@ -130,17 +132,17 @@ class GameManager implements Serializable {
 
 
         Potion healthPotion = ItemFactory.createPotion("HealthPotion", 2,
-                "Greater Health Potion", "A greater health potion");
+                "Greater Health Potion", "A greater health potion.");
         healthPotion.setSpawnPoint(healthPotionSpawnPoint);
         items.add(healthPotion);
 
         Potion strengthPotion = ItemFactory.createPotion("StrengthPotion", 2,
-                "Greater Strength Potion", "A greater strength potion");
+                "Greater Strength Potion", "A greater strength potion.");
         strengthPotion.setSpawnPoint(strengthPotionSpawnPoint);
         items.add(strengthPotion);
 
         Potion defensePotion = ItemFactory.createPotion("DefensePotion", 2,
-                "Greater Defense Potion", "A greater defense potion");
+                "Greater Defense Potion", "A greater defense potion.");
         defensePotion.setSpawnPoint(defensePotionSpawnPoint);
         items.add(defensePotion);
 
