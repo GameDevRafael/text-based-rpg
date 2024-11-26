@@ -85,8 +85,8 @@ Emphasizes encapsulation, inheritance and polymorphism throughout the codebase.
 *Visualizing key classes and their relationships.*
 
 ### Sequence Diagram - Gameplay
-![Sequence Diagram](docs/sequence_diagram_game_class.png)  
-*Demonstrating critical gameplay mechanics like movement, combat, and NPC interactions.*
+![Sequence Diagram](docs/Sequence_Diagram_Game_Class.png)  
+*Demonstrating how the core classes interact with each other.*
 
 ## Future Enhancements
 
