@@ -3,11 +3,9 @@ package model.character;
 import model.item.Item;
 import model.item.Shield;
 import model.item.Sword;
-import model.item.Weapon;
 import model.world.Point;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * Player class is a subclass of Character class. It represents the player in the game.
@@ -25,22 +23,42 @@ public class Player extends Character implements Serializable {
     }
 
     /**
-     * According to the items in the inventory, updates the defense and damage the player can deal.
+     * According to the item picked up, improves the values of defense and damage the player can deal.
+     * @param item item that was picked up
      */
-    public void updateStats() {
+    public void addStats(Item item) {
         float defensePercentage = this.getDefense();
         float damagePercentage = this.getDamage();
 
-        for (Item item : this.getInventory().getItems()) {
-            if (item instanceof Shield) {
-                defensePercentage *= (1 + (((Shield) item).getDamageReduced() / 100.0f));
-            } else if (item instanceof Sword) {
-                damagePercentage *= (1 + (((Sword) item).getDamageBoost() / 100.0f));
-            }
+        if (item instanceof Shield){
+            defensePercentage *= (1 + (((Shield) item).getDamageReduced() / 100.0f));
+        } else if (item instanceof Sword){
+            damagePercentage *= (1 + (((Sword) item).getDamageBoost() / 100.0f));
         }
 
         this.setDefense((float) (Math.ceil(defensePercentage * 10) / 10.0f));
         this.setDamage((float) (Math.ceil(damagePercentage * 10) / 10.0f));
+
+    }
+
+    /**
+     * According to the item removed, decreases the values of defense and damage the player can deal.
+     * @param item item that was removed
+     */
+    public void removeStats(Item item){
+        float defensePercentage = this.getDefense();
+        float damagePercentage = this.getDamage();
+
+        if (item instanceof Shield){
+                defensePercentage /= (1 + (((Shield) item).getDamageReduced() / 100.0f));
+        } else if (item instanceof Sword){
+                damagePercentage /= (1 + (((Sword) item).getDamageBoost() / 100.0f));
+        }
+
+        this.setDefense((float) (Math.ceil(defensePercentage * 10) / 10.0f));
+        this.setDamage((float) (Math.ceil(damagePercentage * 10) / 10.0f));
+
+
     }
 
     public boolean isInventoryFull() {

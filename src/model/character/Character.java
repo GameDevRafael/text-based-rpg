@@ -131,12 +131,13 @@ public class Character implements Serializable {
      * the same type, so it can check if it's better, worse or the same to decide what to do.
      * @param item the item to add to the inventory
      */
-    public void addItem(Item item) {
+    public boolean addItem(Item item) {
         if (item instanceof Weapon) {
-            addOrUpgradeWeapon((Weapon) item);
+            return addOrUpgradeWeapon((Weapon) item);
         } else {
             inventory.addItem(item);
             System.out.println("You have picked up " + item.getName());
+            return true;
         }
     }
 
@@ -152,23 +153,26 @@ public class Character implements Serializable {
      * If the same, it will not add the new weapon.
      * @param newWeapon the weapon to add to the inventory
      */
-    private void addOrUpgradeWeapon(Weapon newWeapon) {
+    private boolean addOrUpgradeWeapon(Weapon newWeapon) {
         Weapon existingWeapon = getWeaponOfSameType(newWeapon);
         if (existingWeapon != null) {
             if (existingWeapon.getTier() >= newWeapon.getTier()) {
                 System.out.println("You already have a better " + existingWeapon.getName() +
                         " (Tier " + existingWeapon.getTier() + ") in your inventory.");
+                return false;
             } else {
                 removeItem(existingWeapon);
                 inventory.addItem(newWeapon);
                 System.out.println("You have upgraded your " + existingWeapon.getName() +
                         " from Tier " + existingWeapon.getTier() + " to " +
                         newWeapon.getName() + " Tier " + newWeapon.getTier());
+                return true;
             }
         } else {
             inventory.addItem(newWeapon);
             System.out.println("You have picked up " + newWeapon.getName() +
                     " (Tier " + newWeapon.getTier() + ")");
+            return true;
         }
     }
 
