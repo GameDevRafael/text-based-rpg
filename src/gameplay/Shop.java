@@ -100,7 +100,8 @@ public class Shop implements Serializable {
     public void displayShop() {
         System.out.println("The shop has " + gold.getDescription() + ". Items available: ");
         for (Weapon weapon : inventory) {
-            System.out.println(weapon.getName() + " - " + weapon.getPrice() + " gold");
+            if(weapon != null)
+                System.out.println(weapon.getName() + " - " + weapon.getPrice() + " gold");
         }
     }
 
@@ -118,7 +119,9 @@ public class Shop implements Serializable {
 
         if (player.getGold() >= weapon.getPrice()) {
             player.removeGold(weapon.getPrice());
-            player.addItem(weapon);
+            if(player.addItem(weapon)){
+                player.addStats(weapon);
+            }
             inventory.remove(weapon);
             gold.addGold(weapon.getPrice());
             System.out.println("You bought " + weapon.getName() + " for " + weapon.getPrice() + " gold.");
