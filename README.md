@@ -76,9 +76,17 @@ Emphasizes encapsulation, inheritance and polymorphism throughout the codebase.
 
 ## Visuals
 
-**Class Diagram**: Visualizing key classes and their relationships.
+### Class Dependency Overview
+![Class Dependency Overview](docs/Class_Dependency_Overview.png)  
+*Visualizing the dependencies between major classes in the project.*
 
-**Sequence Diagram**: Demonstrating critical gameplay mechanics like movement, combat, and NPC interactions.
+### Comprehensive Class Diagram
+![Comprehensive Class Diagram](docs/Comprehensive_Class_Diagram.png)  
+*Visualizing key classes and their relationships.*
+
+### Sequence Diagram - Gameplay
+![Sequence Diagram](docs/sequence_diagram_game_class.png)  
+*Demonstrating critical gameplay mechanics like movement, combat, and NPC interactions.*
 
 ## Future Enhancements
 
