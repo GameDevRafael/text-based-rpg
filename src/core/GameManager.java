@@ -162,7 +162,8 @@ class GameManager implements Serializable {
         boolean isPlaying = true;
         int turnCounter = 0;
 
-        System.out.println("Instructions: Explore the map, defeat enemies, and collect items to find the princess.");
+        System.out.println("Instructions: Explore the map, defeat enemies, and collect items and find the key to free" +
+                " the princess.");
 
         while (isPlaying) {
             isPlaying = game.playTurn();

@@ -155,9 +155,10 @@ import java.util.List;
 
         if (inputHandler.getYesNoInput("Would you like to remove an item from your inventory to make space?")) {
             handleMakeSpace();
-            player.addItem(item);
+            if(player.addItem(item)){
+                player.addStats(item);
+            }
             destroyItemOnSpawnPoint(item);
-            player.updateStats();
         }
     }
 
@@ -194,10 +195,11 @@ import java.util.List;
                 System.out.println("You have picked up " + item.getDescription() +
                         ". Current gold: " + player.getGold());
             } else {
-                player.addItem(item);
+                if(player.addItem(item)){
+                    player.addStats(item);
+                }
             }
             destroyItemOnSpawnPoint(item);
-            player.updateStats();
         }
     }
 
@@ -251,12 +253,20 @@ import java.util.List;
     }
 
     private void handleItemRemoval(String itemName) {
+        Item itemToRemove = null;
+
+        for(Item item : player.getInventory().getItems()){
+            if(item.getName().equals(itemName)){
+                itemToRemove = item;
+            }
+        }
+
         if (itemName.equals("gold")) {
             handleGoldRemoval();
         } else {
             handleRegularItemRemoval(itemName);
         }
-        player.updateStats();
+        player.removeStats(itemToRemove);
     }
 
     private void handleGoldRemoval() {

@@ -73,9 +73,6 @@ class NavigationManager implements Serializable {
      */
     void showPossibleDirections() {
         List<Point> directions = getLocation(player.getPosition()).getExits();
-        for(Point direction : directions){
-            System.out.println(direction);
-        }
         List<String> directionsList = new ArrayList<>();
 
         if(directions.isEmpty()){
@@ -91,7 +88,6 @@ class NavigationManager implements Serializable {
             }
         }
 
-        Collections.sort(directionsList);
         System.out.println("Available directions: " + directionsList);
     }
 

@@ -48,11 +48,11 @@ class Game implements Serializable {
         this.player = player;
         this.items = items;
         this.inputHandler = InputHandler.getInstance(scanner);
+        this.navigationManager = NavigationManager.getInstance(player, gameMap, inputHandler);
         CombatManager combatManager = CombatManager.getInstance(player, individuals, items);
         this.inventoryInteraction = InventoryInteraction.getInstance(player, inputHandler, items, combatManager);
         this.interactionManager = InteractionManager.getInstance(player, inputHandler, inventoryInteraction,
                 combatManager);
-        this.navigationManager = NavigationManager.getInstance(player, gameMap, inputHandler);
     }
 
     /**
